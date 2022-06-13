@@ -61,7 +61,6 @@ def state_processing_exit(app, cfg):
     """Upload picture to Telegram chat"""
     if hasattr(app, "telegram_client"):
         chat_id = cfg.get(SECTION, "telegram_chat_id").strip('"')
-        # upload_path = os.path.basename(app.previous_picture_file)
         message = cfg.get(SECTION, "telegram_message")
         try:
             response = app.telegram_client.send_photo(
@@ -70,6 +69,6 @@ def state_processing_exit(app, cfg):
                 photo=open(app.previous_picture_file, 'rb'),
                 parse_mode=telegram.ParseMode.MARKDOWN,
             )
-            LOGGER.info("File uploaded to Telegram chat: " + response)
+            LOGGER.info("File uploaded to Telegram chat: " + str(response))
         except TelegramError as e:
             LOGGER.error(e)
