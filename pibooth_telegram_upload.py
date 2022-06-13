@@ -15,7 +15,7 @@ import pibooth
 from pibooth.utils import LOGGER
 
 
-__version__ = "1.0.1"
+__version__ = "1.0.2"
 
 SECTION = "Telegram"
 
