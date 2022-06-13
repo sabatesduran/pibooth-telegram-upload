@@ -29,6 +29,7 @@ jobs:
         pip install setuptools wheel twine
     - name: Install pibooth
       run: |
+        sudo apt-get update
         sudo apt-get install libsdl* libsmpeg-dev libportmidi-dev
         pip install pibooth
     - name: Install telegram client
